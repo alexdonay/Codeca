@@ -17,7 +17,7 @@ public class NovaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.nova);
+        setContentView(R.layout.activity_nova);
         tiposdeservico = findViewById(R.id.tiposdeservico);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(),
                 android.R.layout.simple_spinner_dropdown_item,servicos);

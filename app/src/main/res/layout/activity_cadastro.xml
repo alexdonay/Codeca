@@ -148,7 +148,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="end"
-                    android:text="@string/contato"
+                    android:text="@string/Celular"
                     android:textColor="#050505" />
 
                 <EditText
@@ -156,7 +156,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Digite seu Contato"
+                    android:hint="Digite seu Celular"
                     android:inputType="phone"
                     android:textSize="14sp" />
 

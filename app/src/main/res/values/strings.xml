@@ -14,7 +14,7 @@
     <string name="email">E-mail:</string>
     <string name="senha">Senha:</string>
     <string name="cpf">CPF:</string>
-    <string name="contato">Contato:</string>
+    <string name="Celular">Celular:</string>
     <string name="facacadastro">Faça seu Cadastro:</string>
     <string name="tiposervico">     Selecione o tipo de serviço:</string>
     <string name="localizacao">     Selecione a sua localização:</string>

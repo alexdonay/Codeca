@@ -1,13 +1,13 @@
 package igor.moreira.codeca;
 
-public class UserModel {
+public class ModeloUsuario {
     private String nome;
     private String eMail;
     private String senha;
     private String CPF;
     private String telefone;
 
-    public UserModel(String nome, String eMail, String senha, String CPF, String telefone) {
+    public ModeloUsuario(String nome, String eMail, String senha, String CPF, String telefone) {
         this.nome = nome;
         this.eMail = eMail;
         this.senha = senha;

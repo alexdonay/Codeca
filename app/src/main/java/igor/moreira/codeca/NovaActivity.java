@@ -1,16 +1,14 @@
 package igor.moreira.codeca;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.Spinner;
 
 
 import androidx.appcompat.app.AppCompatActivity;
 
 
-public class Nova extends AppCompatActivity {
+public class NovaActivity extends AppCompatActivity {
 
     private Spinner tiposdeservico;
 

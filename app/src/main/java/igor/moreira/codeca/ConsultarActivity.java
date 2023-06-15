@@ -1,14 +1,14 @@
 package igor.moreira.codeca;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
-public class Solicitacao extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class ConsultarActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.solicitacao);
+        setContentView(R.layout.consultar);
     }
 }

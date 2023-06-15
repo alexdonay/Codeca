@@ -1,6 +1,5 @@
 package igor.moreira.codeca;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 
@@ -10,7 +9,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 
 import igor.moreira.codeca.databinding.LoginBinding;
 
-public class Login extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     LoginBinding binding;
     GoogleSignInClient googleSignInClient;

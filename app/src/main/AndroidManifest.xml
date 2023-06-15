@@ -12,19 +12,19 @@
         android:theme="@style/Theme.Codeca"
         tools:targetApi="31">
         <activity
-            android:name=".Cadastro"
+            android:name=".CadastroActivity"
             android:exported="false"/>
         <activity
-            android:name=".Solicitacao"
+            android:name=".SolicitacaoActivity"
             android:exported="false"/>
         <activity
-            android:name=".Login"
+            android:name=".LoginActivity"
             android:exported="false"/>
         <activity
-            android:name=".Consultar"
+            android:name=".ConsultarActivity"
             android:exported="false"/>
         <activity
-            android:name=".Nova"
+            android:name=".NovaActivity"
             android:exported="true">
 
             <intent-filter>

@@ -10,9 +10,9 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.Codeca"
-        tools:targetApi="31">
+        tools:targetApi="32">
         <activity
-            android:name=".SplashActivity"
+            android:name=".NovaActivity"
             android:exported="false" />
         <activity
             android:name=".CadastroActivity"
@@ -27,7 +27,7 @@
             android:name=".ConsultarActivity"
             android:exported="false" />
         <activity
-            android:name=".NovaActivity"
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

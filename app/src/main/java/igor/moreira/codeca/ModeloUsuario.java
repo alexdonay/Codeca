@@ -6,18 +6,25 @@ public class ModeloUsuario {
     private String senha;
     private String CPF;
     private String telefone;
-
+    private int IDbackend;
     public ModeloUsuario(String nome, String eMail, String senha, String CPF, String telefone) {
         this.nome = nome;
         this.eMail = eMail;
         this.senha = senha;
         this.CPF = CPF;
         this.telefone = telefone;
+
     }
     public ModeloUsuario(){
 
     }
 
+    public void setIDbackend(int id){
+        this.IDbackend = id;
+    }
+    public int getIDbackend(){
+        return IDbackend;
+    }
     public String getNome() {
         return nome;
     }

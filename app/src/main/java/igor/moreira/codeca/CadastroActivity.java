@@ -40,7 +40,7 @@ public class CadastroActivity extends AppCompatActivity {
             } else {
                 ModeloUsuario usuario = new ModeloUsuario(txNome.getText().toString(), txEmail.getText().toString(),
                         txSenha.getText().toString(), txCPF.getText().toString(), txCelular.getText().toString());
-                bd.addUsuario(usuario);//Envia para a api
+                        usuario.setIDbackend(bd.cadastraUsuario(usuario));
                 UsuarioDbHelper userDB = new UsuarioDbHelper(this,null,null,1);
                 userDB.criarUsuario(usuario);
                 userDB.close();

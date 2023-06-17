@@ -46,4 +46,9 @@ public class BdSingleton {
     public int nextSolucitacaoIndex() {
             return solicitacoes.size();
     }
+    public int cadastraUsuario(ModeloUsuario usuario){
+        this.usuarios = usuario;
+        return 0; //retorna o ID do usuário no banco de dados do backend
+
+    }
 }

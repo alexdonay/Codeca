@@ -8,6 +8,7 @@ public class ModeloSolicitacao {
     private String caminhoFoto;
     private String descricao;
     private String status;
+    private int idSolicitacaoApi;
 
     public ModeloSolicitacao(int _id, int tpServico, Double latitude, Double longitude, String caminhoFoto, String descricao, String status) {
         this._id = _id;
@@ -17,6 +18,13 @@ public class ModeloSolicitacao {
         this.caminhoFoto = caminhoFoto;
         this.descricao = descricao;
         this.status = status;
+    }
+    public int getIdSolicitacaoApi() {
+        return idSolicitacaoApi;
+    }
+
+    public void setIdSolicitacaoApi(int idSolicitacaoApi) {
+        this.idSolicitacaoApi = idSolicitacaoApi;
     }
 
     public int get_id() {

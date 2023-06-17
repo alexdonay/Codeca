@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
-public class UsuarioDbHelper extends SQLiteOpenHelper {
+public class DbHelperUsuario extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "codeca.db";
     private static final int DATABASE_VERSION = 1;
     private static final String TABLE_NAME = "usuario";
@@ -16,7 +16,7 @@ public class UsuarioDbHelper extends SQLiteOpenHelper {
     public static final String COLUMN_EMAIL = "email";
     public static final String COLUMN_CPF = "cpf";
     public static final String COLUMN_CELULAR = "celular";
-    public UsuarioDbHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
+    public DbHelperUsuario(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
 

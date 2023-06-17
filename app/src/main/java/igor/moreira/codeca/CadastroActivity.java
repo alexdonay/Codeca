@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -41,7 +40,7 @@ public class CadastroActivity extends AppCompatActivity {
                 ModeloUsuario usuario = new ModeloUsuario(txNome.getText().toString(), txEmail.getText().toString(),
                         txSenha.getText().toString(), txCPF.getText().toString(), txCelular.getText().toString());
                         usuario.setIDbackend(bd.cadastraUsuario(usuario));
-                UsuarioDbHelper userDB = new UsuarioDbHelper(this,null,null,1);
+                DbHelperUsuario userDB = new DbHelperUsuario(this,null,null,1);
                 userDB.criarUsuario(usuario);
                 userDB.close();
                 Intent intent = new Intent(CadastroActivity.this, SolicitacaoActivity.class);

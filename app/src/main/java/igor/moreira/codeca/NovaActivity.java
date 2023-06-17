@@ -22,14 +22,14 @@ public class NovaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nova);
-
-
+        tiposdeservico = findViewById(R.id.tiposdeservico);
+        btnEnviaSol = findViewById(R.id.btnEnviarSol);
 
     }
     @Override
     protected void onResume() {
         super.onResume();
-        tiposdeservico = findViewById(R.id.tiposdeservico);
+
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(),
                 android.R.layout.simple_spinner_dropdown_item,servicos);
         tiposdeservico.setAdapter(adapter);

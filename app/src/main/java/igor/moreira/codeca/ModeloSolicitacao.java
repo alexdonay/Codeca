@@ -5,16 +5,16 @@ public class ModeloSolicitacao {
     private int tpServico;
     private Double  latitude;
     private Double longitude;
-    private String localizacaoFoto;
+    private String caminhoFoto;
     private String descricao;
     private String status;
 
-    public ModeloSolicitacao(int _id, int tpServico, Double latitude, Double longitude, String localizacaoFoto, String descricao, String status) {
+    public ModeloSolicitacao(int _id, int tpServico, Double latitude, Double longitude, String caminhoFoto, String descricao, String status) {
         this._id = _id;
         this.tpServico = tpServico;
         this.latitude = latitude;
         this.longitude = longitude;
-        this.localizacaoFoto = localizacaoFoto;
+        this.caminhoFoto = caminhoFoto;
         this.descricao = descricao;
         this.status = status;
     }
@@ -47,12 +47,12 @@ public class ModeloSolicitacao {
         this.longitude = longitude;
     }
 
-    public String getLocalizacaoFoto() {
-        return localizacaoFoto;
+    public String getCaminhoFoto() {
+        return caminhoFoto;
     }
 
-    public void setLocalizacaoFoto(String localizacaoFoto) {
-        this.localizacaoFoto = localizacaoFoto;
+    public void setLocalizacaoFoto(String caminhoFoto) {
+        this.caminhoFoto = caminhoFoto;
     }
 
     public String getDescricao() {

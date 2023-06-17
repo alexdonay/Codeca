@@ -8,6 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="primeiro">#FFFFFF</color>
+    <color name="primeiro02">#80AC64</color>
     <color name="segundo">#FFFFFF</color>
     <color name="terceiro">#80AC64</color>
     <color name="vermelho">#D50000</color>

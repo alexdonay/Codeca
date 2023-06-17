@@ -40,8 +40,10 @@ public class BdSingleton {
     public void addUsuario(ModeloUsuario usuario){
        this.usuarios = usuario;
     }
-    public void addSolicitacao(ModeloSolicitacao solicitacao){
+    public int cadastraSolicitacao(ModeloSolicitacao solicitacao){
+
         solicitacoes.add(solicitacao);
+        return solicitacoes.size()-1;
     }
     public int nextSolucitacaoIndex() {
             return solicitacoes.size();
@@ -50,5 +52,8 @@ public class BdSingleton {
         this.usuarios = usuario;
         return 0; //retorna o ID do usuário no banco de dados do backend
 
+    }
+    public int getUsuarioId(){
+        return usuarios.getIDbackend();
     }
 }

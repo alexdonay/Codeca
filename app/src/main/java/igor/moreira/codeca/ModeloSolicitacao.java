@@ -9,16 +9,26 @@ public class ModeloSolicitacao {
     private String descricao;
     private String status;
     private int idSolicitacaoApi;
+    private int idUserApi;
 
-    public ModeloSolicitacao(int _id, int tpServico, Double latitude, Double longitude, String caminhoFoto, String descricao, String status) {
-        this._id = _id;
+    public ModeloSolicitacao( int tpServico, Double latitude, Double longitude, String caminhoFoto, String descricao, String status) {
         this.tpServico = tpServico;
         this.latitude = latitude;
         this.longitude = longitude;
         this.caminhoFoto = caminhoFoto;
         this.descricao = descricao;
         this.status = status;
+
     }
+
+    public int getIdUserApi() {
+        return idUserApi;
+    }
+
+    public void setIdUserApi(int idUserApi) {
+        this.idUserApi = idUserApi;
+    }
+
     public int getIdSolicitacaoApi() {
         return idSolicitacaoApi;
     }

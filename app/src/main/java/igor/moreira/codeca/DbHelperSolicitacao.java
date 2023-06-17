@@ -1,5 +1,6 @@
 package igor.moreira.codeca;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -17,6 +18,7 @@ public class DbHelperSolicitacao extends SQLiteOpenHelper {
     private static final String COLUMN_caminhoFoto = "caminhoFoto";
     private static final String COLUMN_descricao = "descricao";
     private static final String COLUMN_status = "status";
+    private static final String COLUMN_idUser = "idUser";
 
     public DbHelperSolicitacao(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
@@ -40,5 +42,20 @@ public class DbHelperSolicitacao extends SQLiteOpenHelper {
         String dropTableQuery = "DROP TABLE IF EXISTS " + TABLE_NAME;
         sqLiteDatabase.execSQL(dropTableQuery);
         onCreate(sqLiteDatabase);
+    }
+    public long criaSolicitacao (ModeloSolicitacao solicitacao) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_tpServico, solicitacao.getTpServico());
+        values.put(COLUMN_latitude, solicitacao.getLatitude());
+        values.put(COLUMN_longitude, solicitacao.getLongitude());
+        values.put(COLUMN_caminhoFoto, solicitacao.getCaminhoFoto());
+        values.put(COLUMN_descricao, solicitacao.getDescricao());
+        values.put(COLUMN_status, solicitacao.getStatus());
+
+        long idSolicitacao = db.insert(TABLE_NAME, null, values);
+        db.close();
+        return idSolicitacao;
+
     }
 }

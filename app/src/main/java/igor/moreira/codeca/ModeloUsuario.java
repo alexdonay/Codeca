@@ -14,6 +14,9 @@ public class ModeloUsuario {
         this.CPF = CPF;
         this.telefone = telefone;
     }
+    public ModeloUsuario(){
+
+    }
 
     public String getNome() {
         return nome;

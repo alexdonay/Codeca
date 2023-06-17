@@ -15,7 +15,13 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
+                BdSingleton bd = BdSingleton.getInstance();
+                Intent intent;
+                if(bd.getUsuarios()!=null){
+                    intent = new Intent(SplashActivity.this,CadastroActivity.class);
+                }else{
+                    intent = new Intent(SplashActivity.this, LoginActivity.class);
+                }
                 startActivity(intent);
                 finish();
             }

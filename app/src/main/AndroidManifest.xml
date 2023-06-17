@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.Codeca"
-        tools:targetApi="32">
+        tools:targetApi="33">
         <activity
             android:name=".NovaActivity"
             android:exported="false" />

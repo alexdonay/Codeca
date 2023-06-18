@@ -30,7 +30,7 @@
     <string name="statusdasol">Status</string>
     <string name="editarsol">Editar</string>
     <string name="salvarsol">Salvar</string>
-    <string name ="tirarFoto">Tirar Foto</string>
+    <string name="tirarFoto">Tire a foto:</string>
 
 
 </resources>

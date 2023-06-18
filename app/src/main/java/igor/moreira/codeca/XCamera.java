@@ -9,10 +9,7 @@ import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.widget.ImageView;
-import android.widget.Toast;
-
 import androidx.core.content.FileProvider;
-
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -29,7 +26,6 @@ public class XCamera {
     }
 
     public void dispatchTakePictureIntent() {
-        Toast.makeText(mContext, "abrindo camera", Toast.LENGTH_SHORT).show();
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         try {
             photoFile = createImageFile();
@@ -44,7 +40,6 @@ public class XCamera {
     }
 
     private File createImageFile() throws IOException {
-        Toast.makeText(mContext, "Criando foto", Toast.LENGTH_SHORT).show();
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.US).format(new Date());
         String imageFileName = "JPEG_" + timeStamp + "_";
         File storageDir = mContext.getExternalFilesDir(Environment.DIRECTORY_PICTURES);

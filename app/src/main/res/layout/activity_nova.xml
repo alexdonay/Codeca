@@ -76,58 +76,31 @@
 
             <com.google.android.gms.maps.MapView
                 android:id="@+id/mapView"
-                android:layout_width="193dp"
-                android:layout_height="80dp"
+                android:layout_width="372dp"
+                android:layout_height="98dp"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp" />
-
-            <TextView
-                android:id="@+id/txtou2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="50dp"
-                android:layout_marginEnd="10dp"
-                android:text="@string/text_ou"
-                android:textColor="#050505" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
-
-                <EditText
-                    android:id="@+id/edtxtCep"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="20dp"
-                    android:hint="Informe o CEP"
-                    android:inputType="textPersonName"
-                    android:textSize="14sp" />
-
-
-            </LinearLayout>
+                android:layout_marginTop="20dp"
+                android:foreground="@drawable/map" />
 
         </LinearLayout>
 
-        <Button
-            android:id="@+id/btnTirarFoto"
+        <TextView
+            android:id="@+id/txtLocalizacao2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="33dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
-            android:gravity="center"
+            android:layout_marginEnd="20dp"
             android:text="@string/tirarFoto"
-
-            android:typeface="normal" />
+            android:textColor="#000000"
+            android:textSize="15sp" />
 
         <ImageView
             android:id="@+id/fotoView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_launcher_foreground"
-            tools:srcCompat="@tools:sample/avatars" />
+            app:srcCompat="@drawable/fotoicon"
+            tools:srcCompat="@drawable/fotoicon" />
 
         <TextView
             android:id="@+id/txtObservacoes"
@@ -173,6 +146,13 @@
                 android:orientation="vertical">
 
 
+                <Button
+                    android:id="@+id/btnEnviarSolicitacao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/enviar"
+                    android:typeface="normal" />
             </LinearLayout>
 
             <Button

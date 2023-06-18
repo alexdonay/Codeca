@@ -16,10 +16,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.maps.MapView;
+
 
 public class NovaActivity extends AppCompatActivity {
     private Spinner tiposdeservico;
-
+    MapView mapView;
     String[] servicos = {"teste01", "teste02", "teste03"};
     Button btnEnviaSol;
     Button btnTirarFoto;
@@ -39,18 +41,24 @@ public class NovaActivity extends AppCompatActivity {
 
         tiposdeservico = findViewById(R.id.tiposdeservico);
         btnEnviaSol = findViewById(R.id.btnEnviarSol);
-        btnTirarFoto = (Button) findViewById(R.id.btnTirarFoto);
+        mapView = findViewById(R.id.mapView);
         imageView = (ImageView) findViewById(R.id.fotoView);
-
-        btnTirarFoto.setOnClickListener(new View.OnClickListener() {
+        imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 camera.dispatchTakePictureIntent();
             }
         });
-
+        mapView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(NovaActivity.this, "Função a ser implementada futuramente", Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
+
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -60,6 +68,8 @@ public class NovaActivity extends AppCompatActivity {
             }
         }
     }
+
+
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);

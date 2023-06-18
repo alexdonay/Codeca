@@ -41,7 +41,7 @@ public class NovaActivity extends AppCompatActivity {
     static final int CAMERA = 1;
     private String currentPhotoPath;
     private static final int REQUEST_IMAGE_CAPTURE = 1;
-    XCamera camera;
+
     String[] servicos = {"teste01", "teste02", "teste03"};
     Button btnEnviaSol;
     Button btnTirarFoto;
@@ -57,7 +57,7 @@ public class NovaActivity extends AppCompatActivity {
         tiposdeservico = findViewById(R.id.tiposdeservico);
         btnEnviaSol = findViewById(R.id.btnEnviarSol);
         btnTirarFoto = (Button) findViewById(R.id.btnTirarFoto);
-        camera = new XCamera(this);
+
         imageView = (ImageView) findViewById(R.id.fotoView);
 
         btnTirarFoto.setOnClickListener(new View.OnClickListener() {

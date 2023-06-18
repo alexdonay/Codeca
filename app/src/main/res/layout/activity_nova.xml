@@ -125,6 +125,7 @@
             app:helperText="Caracteres Restantes:">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtDescricao"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -148,7 +149,7 @@
 
                 <Button
                     android:id="@+id/btnEnviarSolicitacao"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="@string/enviar"

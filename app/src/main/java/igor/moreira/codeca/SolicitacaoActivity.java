@@ -29,7 +29,7 @@ public class SolicitacaoActivity extends AppCompatActivity {
             startActivity(intent);
         });
         consultar.setOnClickListener(view -> {
-            Intent intent = new Intent(SolicitacaoActivity.this, NovaActivity.class);
+            Intent intent = new Intent(SolicitacaoActivity.this, ConsultarActivity.class);
             startActivity(intent);
         });
     }

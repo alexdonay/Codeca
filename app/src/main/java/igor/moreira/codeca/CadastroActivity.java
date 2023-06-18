@@ -27,27 +27,29 @@ public class CadastroActivity extends AppCompatActivity {
         Log.d("MinhaActivity", "Entrando na Activity cadastro");
         btnCadastrar.setOnClickListener(view -> {
             BdSingleton bd = BdSingleton.getInstance();
-            txNome = findViewById(R.id.txtNome);
-            txEmail = findViewById(R.id.txtemail);
-            txSenha = findViewById(R.id.txtsenha);
-            txCPF = findViewById(R.id.txtcpf);
-            txCelular = findViewById(R.id.txtcontato);
+            txNome = findViewById(R.id.edtNome);
+            txEmail = findViewById(R.id.edtEmail);
+            txSenha = findViewById(R.id.edtSenha);
+            txCPF = findViewById(R.id.edtCpf);
+            txCelular = findViewById(R.id.edtcontato);
+
             if (TextUtils.isEmpty(txNome.getText()) || TextUtils.isEmpty(txEmail.getText()) ||
                     TextUtils.isEmpty(txSenha.getText()) || TextUtils.isEmpty(txCPF.getText()) ||
                     TextUtils.isEmpty(txCelular.getText())) {
                 Toast.makeText(getApplicationContext(), "Por favor, preencha todos os campos", Toast.LENGTH_SHORT).show();
-            } else {
+            }
+             else {
                 ModeloUsuario usuario = new ModeloUsuario(txNome.getText().toString(), txEmail.getText().toString(),
                         txSenha.getText().toString(), txCPF.getText().toString(), txCelular.getText().toString());
-                        usuario.setIDbackend(bd.cadastraUsuario(usuario));
+                usuario.setIDbackend(bd.cadastraUsuario(usuario));
                 DbHelperUsuario userDB = new DbHelperUsuario(this,null,null,1);
                 userDB.criarUsuario(usuario);
                 userDB.close();
                 Intent intent = new Intent(CadastroActivity.this, SolicitacaoActivity.class);
+                Toast.makeText(getApplicationContext(), txNome.getText().toString(), Toast.LENGTH_LONG).show();
                 startActivity(intent);
                 finish();
             }
-
         });
     }
 }

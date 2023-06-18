@@ -1,6 +1,6 @@
 package igor.moreira.codeca;
 
-import android.Manifest;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -21,16 +22,17 @@ import com.google.android.gms.maps.MapView;
 
 public class NovaActivity extends AppCompatActivity {
     private Spinner tiposdeservico;
-    MapView mapView;
-    String[] servicos = {"teste01", "teste02", "teste03"};
-    Button btnEnviaSol;
-    Button btnTirarFoto;
-    ImageView imageView;
-    Context mContext;
-    static final int CAMERA = 1;
+    private MapView mapView;
+    private String[] servicos = {"teste01", "teste02", "teste03"};
+    private Button btnEnviaSol;
+
+    private ImageView imageView;
+    private Context mContext;
+    private static final int CAMERA = 1;
     private String currentPhotoPath;
+    private TextView txDescricao;
     private static final int REQUEST_IMAGE_CAPTURE = 1;
-    XCamera camera;
+    private XCamera camera;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,11 +40,11 @@ public class NovaActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_nova);
         camera = new XCamera(NovaActivity.this);
-
         tiposdeservico = findViewById(R.id.tiposdeservico);
-        btnEnviaSol = findViewById(R.id.btnEnviarSol);
+        btnEnviaSol = findViewById(R.id.btnEnviarSolicitacao);
         mapView = findViewById(R.id.mapView);
         imageView = (ImageView) findViewById(R.id.fotoView);
+        txDescricao = findViewById(R.id.txtDescricao);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,6 +58,25 @@ public class NovaActivity extends AppCompatActivity {
             }
         });
 
+        btnEnviaSol.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                double latitude = 12;
+                double longitude = 13;
+                String caminhoFoto = currentPhotoPath;
+                String descricao = txDescricao.getText().toString();
+                String status = "enviado";
+                ModeloSolicitacao solicitacao = new ModeloSolicitacao(tiposdeservico.getSelectedItemPosition(), latitude, longitude, caminhoFoto, descricao, status);
+                solicitacao.setIdUserApi(BdSingleton.getInstance().getUsuarioId());
+                DbHelperSolicitacao db = new DbHelperSolicitacao(NovaActivity.this, null, null, 1);
+                db.criaSolicitacao(solicitacao);
+                BdSingleton singleton = BdSingleton.getInstance();
+                singleton.cadastraSolicitacao(solicitacao);
+                Toast.makeText(NovaActivity.this, "Solicitacao: " + solicitacao.toString(), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(NovaActivity.this, SolicitacaoActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 
@@ -89,17 +110,7 @@ public class NovaActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(),
                 android.R.layout.simple_spinner_dropdown_item, servicos);
         tiposdeservico.setAdapter(adapter);
-        btnEnviaSol.setOnClickListener(view -> {
-            double latitude = 12;
-            double longitude = 13;
-            String caminhoFoto = "currentPhotoPath";
-            String descricao = "descricao";
-            String status = "enviado";
-            ModeloSolicitacao solicitacao = new ModeloSolicitacao(tiposdeservico.getSelectedItemPosition(), latitude, longitude, caminhoFoto, descricao, status);
-            solicitacao.setIdUserApi(BdSingleton.getInstance().getUsuarioId());
-            DbHelperSolicitacao db = new DbHelperSolicitacao(this, null, null, 1);
-            db.criaSolicitacao(solicitacao);
-        });
+
     }
     public int enviaSolicitacaoAPi(ModeloSolicitacao solicitacao) {
         BdSingleton bd = BdSingleton.getInstance();

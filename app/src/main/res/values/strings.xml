@@ -19,7 +19,7 @@
     <string name="tiposervico">     Selecione o tipo de serviço:</string>
     <string name="localizacao">     Selecione a sua localização:</string>
     <string name="enviarfoto">      Enviar foto relacionado a solicitação:</string>
-    <string name="observacoes">     Observações Finais:</string>
+    <string name="observacoes">     Observações:</string>
     <string name="enviar">Enviar a solicitação</string>
     <string name="CEP">Informe o CEP:</string>
     <string name="buscarcep">Consultar CEP</string>
@@ -30,6 +30,7 @@
     <string name="statusdasol">Status</string>
     <string name="editarsol">Editar</string>
     <string name="salvarsol">Salvar</string>
+    <string name ="tirarFoto">Tirar Foto</string>
 
 
 </resources>

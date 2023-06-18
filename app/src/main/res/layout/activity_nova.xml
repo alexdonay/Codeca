@@ -2,10 +2,12 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lsFoto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
     android:background="@drawable/background"
+    android:visibility="visible"
     tools:context=".NovaActivity">
 
     <LinearLayout
@@ -105,47 +107,27 @@
                     android:inputType="textPersonName"
                     android:textSize="14sp" />
 
-                <Button
-                    android:id="@+id/btnCEP"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="20dp"
-                    android:text="@string/buscarcep"
-                    android:textSize="10sp"
-                    android:typeface="normal" />
+
             </LinearLayout>
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/txtResultado"
+        <Button
+            android:id="@+id/btnTirarFoto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="10dp"
-            android:text="@string/resultadocep"
-            android:textColor="#000000"
-            android:textSize="15sp" />
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="@string/tirarFoto"
 
-        <TextView
-            android:id="@+id/txtenviarfoto"
-            android:layout_width="match_parent"
-            android:layout_height="26dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="20dp"
-            android:text="@string/enviarfoto"
-            android:textColor="#000000"
-            android:textSize="15sp" />
+            android:typeface="normal" />
 
-        <TextView
-            android:id="@+id/textView5"
+        <ImageView
+            android:id="@+id/fotoView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="AQUI VAI A FOTO"
-            android:gravity="center"/>
+            app:srcCompat="@drawable/ic_launcher_foreground"
+            tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
             android:id="@+id/txtObservacoes"
@@ -183,6 +165,15 @@
             android:layout_height="match_parent"
             android:gravity="center_horizontal"
             android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+
+            </LinearLayout>
 
             <Button
                 android:id="@+id/btnEnviarSol"
